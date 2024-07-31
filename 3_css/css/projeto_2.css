@@ -1,0 +1,15 @@
+#box_model {
+    background-color: #000;
+    border: 5px solid red;
+    padding: 15px 30px;
+    width: 500px;
+    height: 110px;
+    border-radius: 60px;
+    margin: 100px 50px 70px 30px;
+    outline: 5px solid #384;
+}
+
+.text_format {
+    color: #FFF;
+    font-size: 40px;
+}
