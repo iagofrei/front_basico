@@ -12,7 +12,7 @@ button a {
 }
 
 button {
-    width: 9em;
+    min-width: 9em;
     height: 3em;
     border-radius: 30em;
     font-size: 15px;
@@ -42,6 +42,6 @@ button::before {
 }
 
 button:hover::before {
-    width: 9em;
+    width: 100%;
 }
 
