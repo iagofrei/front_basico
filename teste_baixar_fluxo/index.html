@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baixar fluxo</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div id="container-infos">
+        <form action="flow-selector">
+          <div class="container-selections">
+            <div id="flow-type">
+              <label for="flow_type"></label>
+              <select name="flow_type">
+                <option value="floweditor" selected>Flow Editor</option>
+                <option value="builder">Builder</option>
+                <option value="databuilder">Data Builder</option>
+              </select>
+            </div>
+            <div id="unity-organization" class="hide">
+              <label for="unity_organization"></label>
+              <select name="unity_organization" id="ou">
+                <option value="">Selecione a Unidade Organizacional</option>
+              </select>
+            </div>
+            <div id="chat" class="hide">
+              <label for="select_chat"></label>
+              <select name="select_chat" id="chats">
+                <option value="">Selecione o Chat</option>
+              </select>
+            </div>
+          </div>
+          <div class="action-button">
+            <button id="search">Buscar</button>
+          </div>
+        </form>
+      </div>
+      <div id="container-table">
+        <div class="table-header">
+          <h4>Nome da jornada</h4>
+          <h4>Status</h4>
+          <h4>Versão</h4>
+          <h4>Ação</h4>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
