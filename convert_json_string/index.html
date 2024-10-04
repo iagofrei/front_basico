@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter json e string</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    <div id="header-container">
+      <h2>Converter Json em String | Converter String em Json</h2>
+      <form action="selection-covertion">
+        <select name="type-convertion" id="type-of-convertion">
+          <option value="">Selecione uma opção de conversão</option>
+          <option value="json-to-string">Json para String</option>
+          <option value="string-to-json">String para Json</option>
+        </select>
+      </form>
+    </div>
+    <div id="input-container">
+        <div class="input-description">
+            <p>Insira os dados aqui em baixo:</p>
+        </div>
+      <textarea name="input-value" id="input-data"></textarea>
+      <button id="erase">Limpar</button>
+      <button id="submit">Converter</button>
+    </div>
+    <div id="result-container">
+        <div class="result-description">
+            <p>Dado convertido:</p>
+        </div>
+      <textarea name="result-value" id="result-data"></textarea>
+      <button id="copy">Copiar</button>
+    </div>
+  </body>
+</html>
