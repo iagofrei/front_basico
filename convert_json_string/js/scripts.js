@@ -25,31 +25,31 @@ function copyToClipBoard() {
   navigator.clipboard
     .writeText(resultExist)
     .then(() => {
-      alert("Valor copiado para a área de transferencia!");
+      myAlert("succsess", "Valor copiado para a área de transferencia!");
     })
     .catch((err) => {
       console.error("Erro ao copiar texto: ", err);
-      alert("Erro ao copiar texto:");
+      myAlert("error", "Erro ao copiar texto!");
     });
 
   //   if (!resultExist) {
-  //     return alert("Você precisa converter algo antes para copiar");
+  //     return myAlert("warning", "Você precisa converter algo antes para copiar");
   //   } else {
   //     navigator.clipboard
   //       .writeText(resultExist)
   //       .then(() => {
-  //         alert("Valor copiado para a área de transferencia!");
+  //         myAlert("succsess", "Valor copiado para a área de transferencia!");
   //       })
   //       .catch((err) => {
   //         console.error("Erro ao copiar texto: ", err);
-  //         alert("Erro ao copiar texto:");
+  //         myAlert("error", "Erro ao copiar texto!");
   //       });
   //   }
 }
 
 function convertData(data, type) {
   if (!type) {
-    return alert("Você precisa selecionar uma opção de conversão!");
+    return myAlert("warning", "Você precisa selecionar uma opção de conversão!");
   } else {
     if (type === "json-to-string") {
       try {
@@ -57,7 +57,7 @@ function convertData(data, type) {
         return result;
       } catch (error) {
         console.error(error);
-        return alert("Não foi possivel fazer a conversão do dado!");
+        return myAlert("error", "Não foi possivel fazer a conversão do dado!");
       }
     } else {
       try {
@@ -65,7 +65,7 @@ function convertData(data, type) {
         return result;
       } catch (error) {
         console.error(error);
-        return alert("Não foi possivel fazer a conversão do dado!");
+        return myAlert("error", "Não foi possivel fazer a conversão do dado!");
       }
     }
   }
@@ -89,6 +89,29 @@ function cleanAll() {
 //     });
 // }
 
+function myAlert(type, alertMessage) {
+  const alertElement = document.getElementById("alert");
+  const alertElementMessage = document.getElementById("alert-message");
+
+  if (type === "error") {
+    alertElement.style.backgroundColor = "red";
+  } else {
+    if (type === "warning") {
+      alertElement.style.backgroundColor = "orange";
+    } else {
+      alertElement.style.backgroundColor = "green";
+    }
+  }
+
+  alertElementMessage.innerText = alertMessage;
+  alertElement.style.visibility = "visible";
+
+  setTimeout(function () {
+    alertElementMessage.innerText = "";
+    alertElement.style.visibility = "hidden";
+  }, 3000);
+}
+
 // Eventos
 erase.addEventListener("click", (e) => {
   e.preventDefault();
@@ -104,19 +127,3 @@ copy.addEventListener("click", (e) => {
   e.preventDefault();
   copyToClipBoard();
 });
-
-// document.addEventListener("click", (e) => {
-//   const targetEl = e.target;
-//   const parentEl = targetEl.closest("div");
-//   let resultValue;
-//     const parentElId = parentEl.querySelector("#result-container textarea").innerText
-//   console.log(parentEl);
-//   console.log(parentElId);
-
-//   if (parentEl.getElementById("#result-container")) {
-//     resultValue = document.querySelector(
-//       "#result-container textarea"
-//     ).innerHTML;
-//     console.log(resultValue);
-//   }
-// });
