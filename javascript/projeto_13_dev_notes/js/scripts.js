@@ -111,6 +111,8 @@ function addNote() {
   notes.push(noteObject);
 
   saveNotes(notes);
+
+  noteInput.value = ""
 }
 
 function generateId() {
